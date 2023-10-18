@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link rel="stylesheet" href="Css/master.css">
+    <link rel="stylesheet" href="Css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600;700;800&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300;500&family=Poppins:wght@200;400;500;600;700;800;900&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600;1,800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="scroller"></div>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <img class="base-img" src="imgs/logo-light.svg" alt="">
+            </div>
+            <div class="toggle">
+                <i class="fa-solid fa-bars toggles"></i>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Features</a></li>
+                    <li>
+                        <div class="pages">
+                            <a href="#">Pages</a>
+                            <i class="fa-solid fa-angle-down arrow"></i>
+                        </div>
+                            <div class="mega-menu">
+                                <ul class="links">
+                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="blog-single.html">Blog Single</a></li>
+                                    <li><a href="sign-in.html">Sign In</a></li>
+                                    <li><a href="sign-up.html">Sign Up</a></li>
+                                    <li><a href="404.html">404</a></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li><a href="index.html">Support</a></li>
+                </ul>
+                <div class="icon">
+                    <i class="fa-solid fa-moon dark-mode" onclick="switchDarkMode()" ></i>
+                </div>
+                <div class="sing">
+                    <a href="sign-in.html">Sing In</a>
+                    <a class="sing-up" href="sign-up.html">Sing Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section>
+        <img src="imgs/shape-06.svg" alt="">
+        <img src="imgs/shape-03.svg" alt="">
+        <img src="imgs/shape-16.svg" alt="">
+        <div class="sing-div">
+            <span class="dark"></span>
+            <span class="souls"></span>
+            <div class="account">
+                <h2>Create an Account</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+                <h3>Sign up with Social Media</h3>
+                <ul>
+                    <li><i class="fa-brands fa-facebook-f" style="--clr: #1876f2;"></i></li>
+                    <li><i class="fa-brands fa-youtube" style="--clr: #ff0000;"></i></li>
+                    <li><i class="fa-brands fa-twitter" style="--clr: #1da0f2;"></i></li>
+                    <li><i class="fa-brands fa-whatsapp" style="--clr: #25d366;"></i></li>
+                </ul>
+                <span class="with">Or, sign in with your email</span>
+            </div>
+            <form action="https://formbold.com/s/unique_form_id">
+                <div class="field fullname-field">
+                    <div class="input-field">
+                        <label for="fullname">Full name</label>
+                        <input type="text" name="fullname" id="fullname" placeholder="Devid Wonder" class="text">
+                    </div>
+                    <span class="error email-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p class="error-text">Please enter a valid name</p>
+                    </span>
+                </div>
+                <div class="field email-field">
+                    <div class="input-field">
+                        <label for="username">Email</label>
+                        <input type="text" name="username" id="username" placeholder="example@gmail.com" class="email">
+                    </div>
+                    <span class="error email-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p class="error-text">Please enter a valid email</p>
+                    </span>
+                </div>
+                <div class="field create-password">
+                    <div class="input-field">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Create Password" class="password">
+                        <i class="fa-solid fa-eye-slash show-hide"></i>
+                    </div>
+                    <span class="error password-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p class="error-text">Please enter atleast 8 charatcer with, symbol, small and capital letter.</p>
+                    </span>
+                </div>
+                <div class="input-field button">
+                    <input type="submit" value="Sign In">
+                </div>
+                <p class="account">Don't have an account?<a href="sign-in.html"> Sign In </a></p>
+            </form>
+        </div>
+    </section>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="lorem">
+                <div class="base">
+                    <a href="#"><img src="imgs/logo-light.svg" alt=""></a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <ul>
+                        <li style="--clr: #ff0000;">
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>Youtube</span>
+                            </a>
+                        </li>
+                        <li style="--clr: #1da1f2;">
+                            <a href="#">
+                                <i class="fa-brands fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </li>
+                        <li style="--clr: #25d366;">
+                            <a href="#">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>Whatsapp</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="receive">
+                    <div class="newsletter">
+                        <h4>Quick Links</h4>
+                        <p>Home</p>
+                        <p>Product</p>
+                        <p>Careers <span>Hiring</span></p>
+                        <p>Pricing</p>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Services</h4>
+                        <p>Web Development</p>
+                        <p>Graphics Design</p>
+                        <p>Digital Marketing</p>
+                        <p>Ui/Ux Design</p>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Support</h4>
+                        <p>Company</p>
+                        <p>Press media</p>
+                        <p>Our Blog</p>
+                        <p>Contact Us</p>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe to receive future updates</p>
+                        <div class="address">
+                            <div class="Message">
+                                <input title="Write Message" tabindex="i" pattern="\d+" placeholder="Message.." class="MsgInput" type="text">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="30.000000pt" height="30.000000pt" viewBox="0 0 30.000000 30.000000" preserveAspectRatio="xMidYMid meet" class="SendSVG">
+                                <g transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)" fill="#ffffff70" stroke="none">
+                                <path d="M44 256 c-3 -8 -4 -29 -2 -48 3 -31 5 -33 56 -42 28 -5 52 -13 52 -16 0 -3 -24 -11 -52 -16 -52 -9 -53 -9 -56 -48 -2 -21 1 -43 6 -48 10 -10 232 97 232 112 0 7 -211 120 -224 120 -4 0 -9 -6 -12 -14z"></path>
+                                </g>
+                              </svg><span class="l"></span>
+                                
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reserved">
+                <ul>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+                <div class="Support">
+                    <p>© 2025 Base. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="up"><i class="fa-solid fa-angle-up"></i></button>
+
+
+
+
+
+
+    
+    
+    <script src="Js/sign-in.js"></script>
+</body>
+</html>
