@@ -8,7 +8,6 @@ pages.addEventListener("click", () => {
 
 let toggles = document.querySelector(".toggles");
 let mainNav = document.querySelector(".main-nav");
-let toggle = document.querySelector(".toggle");
 
 
 toggles.addEventListener("click", () => {
@@ -26,6 +25,7 @@ let footerImg = document.images[4]
 let el = document.querySelector(".scroller");
 let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 let testimonial = document.querySelectorAll(".testimonial")
+let toggle = document.querySelector(".toggle");
 
 
 window.addEventListener("scroll", () => {
@@ -114,9 +114,9 @@ const form = document.querySelector("form"),
         emailField = form.querySelector(".email-field"),
         emailInput = emailField.querySelector(".email"),
         passFileld = form.querySelector(".create-password"),
-        passInput = passFileld.querySelector(".password")
-        // fullNameFiled = form.querySelector(".fullname-field"),
-        // fullNameInput = fullNameFiled.querySelector(".text")
+        passInput = passFileld.querySelector(".password"),
+        fullNameFiled = form.querySelector(".fullname-field"),
+        fullNameInput = fullNameFiled.querySelector(".text")
         
 // Email Validtion
 
@@ -155,14 +155,14 @@ function createPass() {
     return passFileld.classList.remove("invalid");
 }
 
-// // Password Validation
-// function fullNamePass() {
-//     const fullPassPattern = /^(?=.*[a-z])(?=.*[A-Z])/;
-//     if(!fullNameInput.value.match(fullPassPattern)) {
-//         return fullNameFiled.classList.add("invalid");
-//     }
-//     return fullNameFiled.classList.remove("invalid");
-// }
+// Password Validation
+function fullNamePass() {
+    const fullPassPattern = /^(?=.*[a-z])(?=.*[A-Z])/;
+    if(!fullNameInput.value.match(fullPassPattern)) {
+        return fullNameFiled.classList.add("invalid");
+    }
+    return fullNameFiled.classList.remove("invalid");
+}
 
 
 // Calling Function on Form Submit
@@ -171,9 +171,10 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();//  preventing form submitting
     checkEmail();
     createPass();
+    fullNamePass();
     emailInput.addEventListener("keyup", checkEmail);
     passInput.addEventListener("keyup", createPass);
-
+    fullNameInput.addEventListener("keyup", fullNamePass);
 
     if(
         !emailField.classList.contains("invalid")&&

@@ -12,6 +12,7 @@ let footerImg = document.images[4]
 let el = document.querySelector(".scroller");
 let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 let testimonial = document.querySelectorAll(".testimonial")
+let toggle = document.querySelector(".toggle");
 
 
 window.addEventListener("scroll", () => {
@@ -30,9 +31,10 @@ let button = document.getElementsByClassName("sing-up")[0]
 
 let sing = document.querySelector(".sing a")
 
-button.style.backgroundColor = "#4e6bff"
+button.style.backgroundColor = "#dd1c1a"
 
 sing.style.color = "gray"
+toggle.style.padding = "17px";
 
 // scroll
 
@@ -41,13 +43,14 @@ window.addEventListener("scroll", () => {
     if(scrollTop > 40) {
         header.setAttribute("class", "header scroll")
         logo.style.marginTop = "0"
-
+        toggle.style.padding = "0px";
 
     }else {
         header.setAttribute("class", "header")
         logo.style.marginTop = "12px"
 
         button.setAttribute("class", "sing-up")
+        toggle.style.padding = "17px";
 
     }
 })

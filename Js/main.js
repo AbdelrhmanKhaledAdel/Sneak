@@ -3,6 +3,7 @@
 
 // html elements
 let btnDarkMode = document.getElementsByClassName("dark-mode");
+let toggle = document.querySelector(".toggle");
 
 let logoImg = document.images[0]
 let footerImg = document.images[70]
@@ -29,8 +30,9 @@ let logo = document.querySelector(".logo")
 let button = document.getElementsByClassName("sing-up")[0]
 
 let sing = document.querySelector(".sing a");
-sing.style.color = "white";
-button.style.backgroundColor = "#ffffff30"
+button.style.backgroundColor = "#dd1c1a"
+sing.style.color = "#dd1c1a"
+toggle.style.padding = "15px";
 
 
 // scroll
@@ -40,17 +42,15 @@ window.addEventListener("scroll", () => {
     if(scrollTop > 40) {
         header.setAttribute("class", "header scroll")
         logo.style.marginTop = "0"
+        toggle.style.padding = "0px";
 
-        button.style.backgroundColor = "#4e6bff"
-        sing.style.color = "gray"
     }else {
         header.setAttribute("class", "header")
         logo.style.marginTop = "12px"
 
         button.setAttribute("class", "sing-up")
-        button.style.backgroundColor = "#ffffff30"
+        toggle.style.padding = "15px";
 
-        sing.style.color = "white"
     }
 })
 
@@ -79,7 +79,7 @@ btnDarkMode[0].onclick = function () {
     document.body.classList.toggle("dark-theme");
     if(document.body.classList.contains("dark-theme")) {
         // button
-        btnDarkMode[0].className = "fa-solid fa-sun dark-mode";
+        btnDarkMode[0].className = "bx bx-sun dark-mode";
         
         // image
         document.images[58].src = "imgs/brand-dark-01.svg";
@@ -94,7 +94,7 @@ btnDarkMode[0].onclick = function () {
         document.images[69].src = "imgs/logo-dark.svg";
     }else {
         // button
-        btnDarkMode[0].className = "fa-solid fa-moon dark-mode";
+        btnDarkMode[0].className = "bx bxs-moon dark-mode";
         // image
         document.images[58].src = "imgs/brand-light-01.svg";
         document.images[59].src = "imgs/brand-light-02.svg";
@@ -251,8 +251,8 @@ const filterableCards = document.querySelectorAll(".gallery .free");
 // console.log(filterIcon, filterableCards)
 
 const filterCards = e => {
-    document.querySelector(".active").classList.remove("active");
-    e.target.classList.add("active");
+    document.querySelector(".how").classList.remove("how");
+    e.target.classList.add("how");
 
     filterableCards.forEach(card => {
         card.classList.add("hide");
@@ -281,3 +281,19 @@ let mainNav = document.querySelector(".main-nav");
 toggles.addEventListener("click", () => {
     toggles.classList.toggle("toggle-menu");
 });
+
+function check() {
+    const checkbox = document.querySelector(".toggle-switch")
+    const priceOne = document.querySelector(".One")
+    const priceTwo = document.querySelector(".Two")
+    const pricethere = document.querySelector(".Three")
+      if (checkbox.checked == true) {
+        priceOne.innerHTML = "<div><h3>$149</h3>/per year</div>"
+        priceTwo.innerHTML = "<div><h3>$608</h3>/per year</div>"
+        pricethere.innerHTML = "<div><h3>$1568</h3>/per year</div>"
+      } else {
+        priceOne.innerHTML = "<div><h3>$29</h3>/per month</div>"
+        priceTwo.innerHTML = "<div><h3>$59</h3>/per month</div>"
+        pricethere.innerHTML = "<div><h3>$139</h3>/per month</div>" 
+      };}
+             

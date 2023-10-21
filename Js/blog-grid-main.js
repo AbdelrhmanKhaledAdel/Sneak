@@ -7,6 +7,7 @@ let btnDarkMode = document.getElementsByClassName("dark-mode");
 let logoImg = document.images[0];
 
 let menu = document.getElementsByClassName("menu");
+let toggle = document.querySelector(".toggle");
 
 
 
@@ -34,20 +35,26 @@ let button = document.getElementsByClassName("sing-up")[0]
 
 let sing = document.querySelector(".sing a")
 
-button.style.backgroundColor = "#4e6bff"
+button.style.backgroundColor = "#dd1c1a"
 sing.style.color = "gray"
+toggle.style.padding = "17px";
+
+// scroll
 
 window.addEventListener("scroll", () => {
     let scrollTop = document.documentElement.scrollTop;
     if(scrollTop > 40) {
         header.setAttribute("class", "header scroll")
         logo.style.marginTop = "0"
+        toggle.style.padding = "0px";
 
     }else {
         header.setAttribute("class", "header")
         logo.style.marginTop = "12px"
 
         button.setAttribute("class", "sing-up")
+        toggle.style.padding = "17px";
+
     }
 })
 
