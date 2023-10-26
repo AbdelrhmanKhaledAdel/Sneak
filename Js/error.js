@@ -31,7 +31,7 @@ let button = document.getElementsByClassName("sing-up")[0]
 
 let sing = document.querySelector(".sing a")
 
-button.style.backgroundColor = "#dd1c1a"
+button.style.backgroundColor = "#4e6bff"
 
 sing.style.color = "gray"
 toggle.style.padding = "17px";
@@ -60,10 +60,10 @@ let btn = document.querySelector("button.up")
 //scroll
 
 window.onscroll = function () {
-    if(window.scrollY >= 60) {
-        btn.style.display = "block";
+    if(window.scrollY >= 600) {
+        btn.classList.add("time");
     }else {
-        btn.style.display = "none";
+        btn.classList.remove("time");
     }
 }
 btn.onclick = function () {
@@ -75,28 +75,28 @@ btn.onclick = function () {
 }
 
 
-// // Dark mode 
-btnDarkMode[0].onclick = function () {
-    document.body.classList.toggle("dark-theme");
-    if(document.body.classList.contains("dark-theme")) {
-        // button
-        btnDarkMode[0].className = "fa-solid fa-sun dark-mode";
-        
+function darkMode() {
+    let body = document.body;
+    body.classList.toggle("dark-theme");
 
-        //logo
-        logoImg.src = "imgs/logo-dark.svg";
-        footerImg.src = "imgs/logo-dark.svg"
+    let theme;
+
+    if(body.classList.contains("dark-theme")) {
+        theme = "DARK";
+        btnDarkMode[0].classList.replace("bxs-moon", "bx-sun");
     }else {
-        // button
-        btnDarkMode[0].className = "fa-solid fa-moon dark-mode";
-
-
-
-
-        //logo
-        logoImg.src = "imgs/logo-light.svg";
-        footerImg.src = "imgs/logo-light.svg";
+        theme = "LIGHT";
+        btnDarkMode[0].classList.replace("bx-sun", "bxs-moon");
     }
+    localStorage.setItem("pageTheme", theme)
+}
+
+let getTheme = localStorage.getItem("pageTheme");
+
+if(getTheme == "DARK") {
+    document.body.classList = "dark-theme";
+    btnDarkMode[0].classList.replace("bxs-moon", "bx-sun");
+
 }
 
 

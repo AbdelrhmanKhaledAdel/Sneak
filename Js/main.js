@@ -30,8 +30,8 @@ let logo = document.querySelector(".logo")
 let button = document.getElementsByClassName("sing-up")[0]
 
 let sing = document.querySelector(".sing a");
-button.style.backgroundColor = "#dd1c1a"
-sing.style.color = "#dd1c1a"
+button.style.backgroundColor = "#ffffff26"
+sing.style.color = "#fff"
 toggle.style.padding = "15px";
 
 
@@ -43,13 +43,19 @@ window.addEventListener("scroll", () => {
         header.setAttribute("class", "header scroll")
         logo.style.marginTop = "0"
         toggle.style.padding = "0px";
+        button.style.backgroundColor = "#4e6bff";
+        sing.style.color = "gray"
+
 
     }else {
         header.setAttribute("class", "header")
         logo.style.marginTop = "12px"
-
+        button.style.backgroundColor = "#ffffff26";
         button.setAttribute("class", "sing-up")
         toggle.style.padding = "15px";
+        sing.style.color = "#fff"
+
+
 
     }
 })
@@ -60,9 +66,9 @@ let btn = document.querySelector("button.up")
 
 window.onscroll = function () {
     if(window.scrollY >= 600) {
-        btn.style.display = "block";
+        btn.classList.add("time");
     }else {
-        btn.style.display = "none";
+        btn.classList.remove("time");
     }
 }
 btn.onclick = function () {
@@ -74,42 +80,39 @@ btn.onclick = function () {
 }
 
 
-// // Dark mode 
-btnDarkMode[0].onclick = function () {
-    document.body.classList.toggle("dark-theme");
-    if(document.body.classList.contains("dark-theme")) {
-        // button
-        btnDarkMode[0].className = "bx bx-sun dark-mode";
-        
-        // image
-        document.images[58].src = "imgs/brand-dark-01.svg";
-        document.images[59].src = "imgs/brand-dark-02.svg";
-        document.images[60].src = "imgs/brand-dark-03.svg";
-        document.images[61].src = "imgs/brand-dark-04.svg";
-        document.images[62].src = "imgs/brand-dark-05.svg";
-        document.images[63].src = "imgs/brand-dark-06.svg";
+function darkMode() {
+    let body = document.body;
+    body.classList.toggle("dark-theme");
 
-        //logo
-        logoImg.src = "imgs/logo-dark.svg";
-        document.images[69].src = "imgs/logo-dark.svg";
+    let theme;
+
+    if(body.classList.contains("dark-theme")) {
+        theme = "DARK";
+        btnDarkMode[0].classList.replace("bxs-moon", "bx-sun");
     }else {
-        // button
-        btnDarkMode[0].className = "bx bxs-moon dark-mode";
-        // image
-        document.images[58].src = "imgs/brand-light-01.svg";
-        document.images[59].src = "imgs/brand-light-02.svg";
-        document.images[60].src = "imgs/brand-light-03.svg";
-        document.images[61].src = "imgs/brand-light-04.svg";
-        document.images[62].src = "imgs/brand-light-05.svg";
-        document.images[63].src = "imgs/brand-light-06.svg";
-
-
-
-        //logo
-        logoImg.src = "imgs/logo-light.svg";
-        document.images[69].src = "imgs/logo-light.svg";
+        theme = "LIGHT";
+        btnDarkMode[0].classList.replace("bx-sun", "bxs-moon");
     }
+    localStorage.setItem("pageTheme", theme)
 }
+
+let getTheme = localStorage.getItem("pageTheme");
+
+if(getTheme == "DARK") {
+    document.body.classList = "dark-theme";
+    btnDarkMode[0].classList.replace("bxs-moon", "bx-sun");
+
+}
+
+
+
+
+
+
+
+
+
+
 
 const video = document.querySelector(".video")
 function openVideo() {
@@ -199,7 +202,7 @@ let shopItemsData = [{
     date: "25 Dec, 2022",
     dataName: "anime"
 },{
-    img: "imgs/wallpaperflare.com_wallpaper.jpg",
+    img: "imgs/wallpaperflare.com_wallpaper000.png",
     name: "DARK SOULS 1",
     date: "25 Dec, 2021",
     dataName: "spiderMan"
@@ -283,7 +286,7 @@ toggles.addEventListener("click", () => {
 });
 
 function check() {
-    const checkbox = document.querySelector(".toggle-switch")
+    const checkbox = document.querySelector(".checkbox")
     const priceOne = document.querySelector(".One")
     const priceTwo = document.querySelector(".Two")
     const pricethere = document.querySelector(".Three")

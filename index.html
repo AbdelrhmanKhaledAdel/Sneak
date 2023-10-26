@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/main-logo.png">
     <title>Base</title>
     <link rel="stylesheet" href="Css/master.css">
     <link rel="stylesheet" href="Css/all.min.css">
@@ -19,7 +20,8 @@
     <div class="header">
         <div class="container">
             <div class="logo">
-                <img class="base-img" src="imgs/logo-light.svg" alt="">
+                <img class="base-img" src="imgs/main-logo.png" alt="">
+                <h1>Base</h1>
             </div>
             <div class="toggle">
                 <i class="fa-solid fa-bars toggles"></i>
@@ -45,7 +47,7 @@
                 </ul>
                 <div class="icon">
                     <!-- <i class='bx bx-sun' ></i> -->
-                    <i class='bx bxs-moon dark-mode' onclick="switchDarkMode()"></i>
+                    <i class='bx bxs-moon dark-mode' onclick="darkMode()"></i>
                 </div>
                 <div class="sing">
                     <a href="sign-in.html">Sing In</a>
@@ -254,10 +256,10 @@
             </div>
             <div class="bill">
                 <span>Bill Monthly</span>
-                <div>
-                    <label>
-                        <input class="toggle-checkbox"  type="checkbox" checked>
-                        <div class="toggle-switch" id="toggleSwitch"></div>
+                <div class="checkbox-wrapper-3">
+                    <input class="checkbox" type="checkbox" id="cbx-3" onclick="check()">
+                    <label for="cbx-3" class="toggle">
+                        <span></span>
                     </label>
                 </div>
                 <span>Bill Annually</span>
@@ -266,8 +268,10 @@
                 <div class="table">
                     <h4>Growth Plan</h4>
                     <div class="price One">
+                        <div>
                             <h3>$149</h3>
                             /per year
+                        </div>
                     </div>
                     <p>No credit card required</p>
                     <a class="main" href="">Try For Free</a>
@@ -279,8 +283,10 @@
                 <div class="table">
                     <h4>Growth Plan</h4>
                     <div class="price Two">
-                            <h3>$149</h3>
+                        <div>
+                            <h3>$608</h3>
                             /per year
+                        </div>
                     </div>
                     <p>No credit card required</p>
                     <a class="main trial" href="">Try For Free</a>
@@ -292,8 +298,10 @@
                 <div class="table">
                     <h4>Growth Plan</h4>
                     <div class="price Three">
-                            <h3>$149</h3>
+                        <div>
+                            <h3>$1568</h3>
                             /per year
+                        </div>
                     </div>
                     <p>No credit card required</p>
                     <a class="main" href="">Try For Free</a>
@@ -475,7 +483,7 @@
             <div class="cards">
                 <div class="free">
                     <div class="code">
-                        <img src="imgs/categories-02.jpg" alt="">
+                        <img src="imgs/categories-02000.png" alt="">
                         <div class="read">
                             <a href="#">Read More</a>
                         </div>
@@ -655,7 +663,7 @@
             Ut venenatis rhoncus.
             </p>
             </div>
-            <div class="started">
+            <div class="started" style="z-index: 2;">
                 <a href="#">Get Started Now</a>
             </div>
         </div>
@@ -664,7 +672,12 @@
         <div class="container">
             <div class="lorem">
                     <div class="newsletter">
-                        <a href="#"><img src="imgs/logo-light.svg" alt=""></a>
+                        <a href="#">
+                            <div class="logo">
+                                <img class="base-img" src="imgs/main-logo.png" alt="">
+                                <h1>Base</h1>
+                            </div>
+                        </a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <ul>
                             <li style="--clr: #ff0000;">

@@ -106,24 +106,28 @@ section {
     background-color: var(--scroll-color);
     padding: 10px;
     margin: 0;
+    box-shadow: -3px 5px 20px #00000069;
 }
 .header .container {
     display: flex;
     justify-content: space-between;
 }
-.header .logo {
-    width: 49px;
-    height: 49px;
-    margin-top: 12px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
-
+.logo img {
+    width: 40px;
+}
+.logo h1 {
+    color: var(--text--color);
+}
 .header .toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 17px;
-    /* left: -66px;
-    position: relative; */
 }
 .header .toggles {
     display: none; 
@@ -153,13 +157,9 @@ a.active {
     z-index: 100;
     top: calc(100% + 20px);
     display: block;
+    visibility: inherit;
 }
-/* .header .main-nav > li:hover .mega-menu {
-    opacity: 1;
-    z-index: 100;
-    top: calc(100% + 20px);
-    display: block;
-} */
+
 .header .main-nav li .mega-menu {
     position: absolute;
     width: 250px;
@@ -175,6 +175,7 @@ a.active {
     left: 50%;
     box-shadow: 2px 2px 7px gray;
     border: 2px solid black;
+    visibility: hidden;
 } 
 .header .main-nav li .mega-menu::before {
     content: "";
@@ -210,8 +211,15 @@ a.active {
 }
 .header .icon i {
     font-size: 24px;
-    color: var(--text--color);
+    color: white;
     cursor: pointer;
+}
+.header .icon i.css {
+    color: var(--text--color) !important;
+    
+}
+.header.scroll .icon i.bxs-moon {
+    color: #6a6969;
 }
 .header .sing {
     display: flex;
@@ -236,7 +244,7 @@ a.active {
     margin-left: 20px;
 }
 .header .sing a:last-child:hover {
-    box-shadow: 6px 6px 11px 0px #dd1c1a;
+    box-shadow: 6px 6px 11px 0px #4e6cff4e;
 }
 @media(max-width: 1200px) {
     .header .toggles {
@@ -273,6 +281,11 @@ a.active {
     .header .main-nav li .mega-menu {
             width: 176px;
     }
+}
+@media (max-width: 991px) {
+    .header .icon i.bxs-moon {
+        color: #181c31;
+}
 }
 @media (max-width: 576px) {
     .header .toggle-menu {
@@ -351,7 +364,7 @@ a.active {
     overflow: hidden;
 }
 .landing .shape .blue img {
-    width: 75%;
+    width: 65%;
     position: absolute;
     bottom: 0;
 }
@@ -408,7 +421,7 @@ a.active {
 }
 @media (max-width: 375px)  {
     .landing {
-        height: 50vh;
+        margin-bottom: 0px;
     }
     .landing .user h1 {
         font-size: 24px;
@@ -479,14 +492,13 @@ a.active {
 }
 @media(max-width: 375px) {
     .features {
-        margin-top: 260px;
+        margin-top: 0;
     }
     .features .wolf {
         gap: 10px;
+        
     }
-    .features .wolf .text {
-        top: 23px;
-    }
+
     .features .wolf .text p {
         width: 100%;
     }
@@ -1001,49 +1013,75 @@ a.active {
 }
 .Starter .bill span {
     margin-right: 30px;
-    margin-left: 30px;
+    margin-left: 25px;
     font-size: 20px;
     font-weight: 500;
 }
-.Starter .toggle-checkbox {
-    -webkit-appearance: none;
-    appearance: none;
+.checkbox-wrapper-3 input[type="checkbox"] {
+    visibility: hidden;
     display: none;
 }
-.Starter .toggle-switch {
-    background-color: #ccc;
-    width: 78px;
-    height: 32px;
-    border-radius: 15px;
+.checkbox-wrapper-3 .toggle {
     position: relative;
-    transition: 0.3s;
+    display: block;
+    width: 40px;
+    height: 20px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
 }
-.Starter .toggle-switch::before {
-    content: "\f00d";
+.checkbox-wrapper-3 .toggle:before {
+    content: "";
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 15px;
+    display: block;
+    background: #9a9999;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+.checkbox-wrapper-3 .toggle span {
     position: absolute;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    background-color: white;
-    width: 24px;
-    height: 24px;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
+    transition: all 0.2s ease;
+}
+.checkbox-wrapper-3 .toggle span:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: -18px;
+    width: 56px;
+    height: 56px;
+    background: #4e6bff;
     border-radius: 50%;
-    top: 4px;
-    left: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #aaa;
-    transition: 0.3s;
+    transform: scale(0);
+    opacity: 1;
+    pointer-events: none;
 }
-.Starter .toggle-checkbox:checked + .toggle-switch {
-    background-color: var(--main-color-Alt);
-}
-.Starter .toggle-checkbox:checked + .toggle-switch::before {
-    content: "\f00c";
-    left: 50px;
-    color: var(--main-color-Alt);
-}
+.checkbox-wrapper-3 #cbx-3:checked + .toggle:before {
+    background: #4e6bff;
+  }
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle span {
+    background: #fff;
+    transform: translateX(-30px);
+    transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25),
+      background 0.15s ease;
+    box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
+  }
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle span:before {
+    transform: scale(1);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
 .Starter .tables {
     display: flex;
     justify-content: center;
@@ -1130,8 +1168,9 @@ a.active {
         font-size: 32px;
     }
     .Starter .bill span {
-        margin-right: 10px;
-        margin-left: 10px;
+        margin-right: 15px;
+        margin-left: 23px;
+        font-size: 17px;
     }
     .Starter .table {
         width: 340px;
@@ -2016,6 +2055,9 @@ a.active {
     .form .container {
         width: 90%;
     }
+    .form .stay h2 {
+        font-size: 27px; 
+    }
     .form .stay p {
         width: 95%;
     }
@@ -2107,10 +2149,10 @@ a.active {
 .footer  ul {
     position: relative;
     display: flex;
-    gap: 20px;
+    gap: 5px;
 }
 
-.footer  ul li {
+.footer .newsletter  ul li {
     position: relative;
     display: flex;
     justify-content: center;
@@ -2179,15 +2221,16 @@ a.active {
   
 .Message i {
     position: absolute;
-    top: 51%;
-    right: 8%;
-    color: #7f858f;
+    top: 34%;
+    right: 9%;
+    color: #463d3d;
     font-size: 16px;
-    background-color: #efefefb8;
-    width: 12px;
-    height: 12px;
+    width: 54px;
+    height: 35px;
     z-index: 2;
-
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
   
 .SendSVG:hover {
@@ -2256,19 +2299,22 @@ a.active {
     }
 }
 button.up {
-    bottom: 20px;
+    right: -100px;
+    bottom: 4%;
     padding: 8px;
     border: none;
     color: white;
     border-radius: 4px;
     font-size: 30px;
     position: fixed;
-    right: 20px;
     z-index: 4;
     cursor: pointer;
-    display: none;
+    transition: 0.3s;
 }
-
+button.up.time {
+    bottom: 20px;
+    right: 20px;
+}
 /* Blog Grid */
 .grid {
     position: relative;
@@ -2290,7 +2336,6 @@ button.up {
 
 }
 .grid .cards .free {
-    width: 300px;
     border-radius: 8px;
     box-shadow: 1px 1px 10px 0px gray;
 }
@@ -2510,7 +2555,7 @@ button.up {
     width: 85%;
     transition: width 0.3s;
     padding: 10px 10px 10px 30px;
-    color: var(--text--color);
+    color: black;
     font-size: 17px;
 } 
 .events .categories .search input:focus {
@@ -2602,7 +2647,7 @@ section img:nth-child(3) {
 
 }
 section .sing-div {
-    padding: 66px 70px;
+    padding: 39px 70px;
     background-color: var(--background-color);
     overflow: hidden;
     position: relative;
@@ -2728,9 +2773,10 @@ section .sing-div form .input-field input {
     border: none;
     border-radius: 8px;
     padding: 0 15px;
-    border: 1px solid #d1d1d1;
+    border: 1px solid #4b4b4b;
     font-size: 18px;
     background-color: var(--background);
+    color: var(--text--color);
 }
 .invalid input {
     border-color: #d93025 !important;

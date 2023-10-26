@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/main-logo.png">
     <title>Base</title>
     <link rel="stylesheet" href="Css/master.css">
     <link rel="stylesheet" href="Css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600;700;800&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300;500&family=Poppins:wght@200;400;500;600;700;800;900&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600;1,800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
@@ -16,7 +18,8 @@
     <div class="header">
         <div class="container">
             <div class="logo">
-                <img class="base-img" src="imgs/logo-light.svg" alt="">
+                <img class="base-img" src="imgs/main-logo.png" alt="">
+                <h1>Base</h1>
             </div>
             <div class="toggle">
                 <i class="fa-solid fa-bars toggles"></i>
@@ -41,7 +44,7 @@
                     <li><a href="index.html">Support</a></li>
                 </ul>
                 <div class="icon">
-                    <i class="fa-solid fa-moon dark-mode" onclick="switchDarkMode()" ></i>
+                    <i class='bx bxs-moon dark-mode css' onclick="darkMode()"></i>
                 </div>
                 <div class="sing">
                     <a href="sign-in.html">Sing In</a>
@@ -147,7 +150,7 @@
             Ut venenatis rhoncus.
             </p>
             </div>
-            <div class="started">
+            <div class="started" style="z-index: 2;">
                 <a href="#">Get Started Now</a>
             </div>
         </div>
@@ -156,7 +159,12 @@
         <div class="container">
             <div class="lorem">
                     <div class="newsletter">
-                        <a href="#"><img src="imgs/logo-light.svg" alt=""></a>
+                        <a href="#">
+                            <div class="logo">
+                                <img class="base-img" src="imgs/main-logo.png" alt="">
+                                <h1>Base</h1>
+                            </div>
+                        </a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <ul>
                             <li style="--clr: #ff0000;">
